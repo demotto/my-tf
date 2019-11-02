@@ -8,12 +8,17 @@ def save_data():
         [7,8,9]
     ])
     arr2 = np.array([11,22,33])
-    np.savez()
+    np.savez("hallo.npz", arr1, arr2, data1=arr1, data2=arr2)
 
 
 def load_data():
-    pass
+    f = np.load("hallo.npz")
+    arr1 = f['data1']
+    arr2 = f['data2']
+    print(arr1)
+    print(arr2)
 
 
 if __name__ == '__main__':
-    pass
+    save_data()
+    load_data()
