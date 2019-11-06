@@ -19,5 +19,5 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 model.fit(x_train, y_train, epochs=5)
-
+model.save_weights("/mnt/my_model.dat")
 model.evaluate(x_test,  y_test, verbose=2)
